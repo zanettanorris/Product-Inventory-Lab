@@ -97,9 +97,9 @@ Once the project is loaded into your IDE, open pom.xml. Add the following code, 
     </dependencies>
 ```
 
-Java core does not come with a testing suite but many 3rd party testing options are available to us. One of these third party testing suites is JUnit. JUnit is very popular for testing jave and it will be what we use here. 
+Java core does not come with a testing suite but many 3rd party testing options are available to us. One of these third party testing suites is JUnit. JUnit is very popular for testing Java and it will be what we use here. 
 
-The pom.xml file is a way for a developer to define configuration options for a Java application. It also makes it easy to import and  manage libraries and frameworks that are needed in the project
+The pom.xml file is a way for a developer to define configuration options for a Java application. It also makes it easy to import and  manage libraries and frameworks that are needed in the project.
 
 To confirm that the JUnit testing suite was imported, you can look in the 'external libraries' folder inside the project and find the JUnint libraries listed.
 
@@ -203,7 +203,7 @@ Because our store is so successful, we are really moving through inventory. So I
 
 Because we are Doing Test Driven Development (TDD) we need to also have test classes for the models and the services.
 
-For my example store I will have the follwing test classes
+For my example store I will have the follwing test classes.
 
 ```
 src
