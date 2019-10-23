@@ -240,4 +240,4 @@ git branch -d feature-create-classes
 
 In this section we used git inside the terminal to connect with guthub to handle our version control. We used the pom.xml file to import JUnit so that we can test our code as we develop. Using packages to organize our code, we created some classes to represent products in the application.
 
-Now it is time to add some functionality to the classes.
+Now it is time to add some functionality to the classes, we will do this in the next section
