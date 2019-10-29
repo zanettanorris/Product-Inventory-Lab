@@ -117,14 +117,14 @@ Once you complete this model, commit your changes to git and continue testing yo
 
 ## Part 3 - Contructors
 
-Now is a good time to thing about how these objects will be created. If we create an object from one of the models like so:
+Now is a good time to think about how these objects will be created. If we create an object from one of the models like so:
 ```
 Sneaker sweetAdidas = new Sneaker();
 ```
 
 We will get back a Sneaker object, but none of the properties will be set. In some situations this maybe how you want your object to behave. But I want to use the constructor to initialize the objects properties.
 
-```
+```java
 Sneaker sweetAdidas = new Sneaker(6, "Stan Smith", "Adidas", "Tennis", 10.5f, 10, 80.00f);
 ```
 
@@ -132,13 +132,13 @@ To begin create a new git branch to work on. We will open the test for this obje
 
 **test/java/models/SneakerTest.java**
 
-```
+```java
 public class SneakerTest {
 		
     @Test // (1)
     public void constructorTest(){
     	  
-    	  // (2)
+        // (2)
         int expectedId = 6;
         String expectedName = "Stan Smith";
         String expectedBrand = "Adidas";
@@ -146,11 +146,11 @@ public class SneakerTest {
         int expectedQty = 10;
         float expectedPrice = 80.00f;
 
-		  // (3)
+        // (3)
         Sneaker testSneaker = new Sneaker(expectedId, expectedName, expectedBrand,
                 expectedSport, expectedQty,expectedPrice);
 
-		  // (4)
+        // (4)
         Assertions.assertEquals(expectedId, testSneaker.getId());
         Assertions.assertEquals(expectedName, testSneaker.getName());
         Assertions.assertEquals(expectedBrand, testSneaker.getBrand());
@@ -160,14 +160,14 @@ public class SneakerTest {
     }
 }
 ```
-1. The test annotation in needed to notify JUnit to treat this method as a test
-2. We create date to use during the test. We will pass these values into the constructor and expect the same values upon retrieval. 
-3. Create a new object form the test data created above.
-4. Use accessor methods to retieve the objects data and assert that it is equal to what was passed into the constructor
+1. The test annotation in needed to notify JUnit to treat this method as a test.
+2. We create data to use during the test. We will pass these values into the constructor and expect the same values upon retrieval. 
+3. Create a new object from the test data created above.
+4. Use accessor methods to retrieve the object's data and assert that it is equal to what was passed into the constructor.
 
-Remimber to go to git and add/commit/merge your code
+Remember to go to git and add/commit/merge your code
 
-Now complete the constructors for the rest of your models
+Now complete the constructors for the rest of your models.
 
 ## Part 4 - Managing the Data with a Service
 
