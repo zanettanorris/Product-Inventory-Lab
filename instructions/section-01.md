@@ -1,7 +1,7 @@
 # Section 1
 
 #### The brief
-Imagine you have a fantastic store where you buy/sell/trade a great product. Business if good and the inventory has grown alot. It's time to find a better way to manage the inventory. So you decide to put some shiny new java skills to work.
+Imagine you have a fantastic store where you buy/sell/trade a great product. Business if good and the inventory has grown alot. It's time to find a better way to manage the inventory. So you decide to put some shiny new Java skills to work.
 
 In this section we start with an empty Java project and start to setup our environment. Getting our testing framework in place and thinking about the objects we will create to compose the application.
 
@@ -23,7 +23,7 @@ There is a start project waiting for you on Git Hub. Fork this repo, and clone y
 git clone https://github.com/Zipcoder/Product-Inventory-Lab
 ```
 
-Now that we have a forked copy on our local machine we can create a development branch(aka dev branch.) Rememeber to alse change directories into the newly cloned repo
+Now that we have a forked copy on our local machine we can create a development branch(aka dev branch.) Rememeber to also change directories into the newly cloned repo.
 
 ```
 cd ./Product-Inventory-Lab
@@ -46,7 +46,7 @@ Now we will always use the 'dev' branch as a starting piont to build new feature
 3. Add Testing framework to pom.xml file
 4. Update git and push to github
 
-Now it's time to get our testing environment set up. In terminal, navigate to your project directory
+Now it's time to get our testing environment set up. In terminal, navigate to your project directory.
 
 ```
 cd /path/to/project/
@@ -97,9 +97,9 @@ Once the project is loaded into your IDE, open pom.xml. Add the following code, 
     </dependencies>
 ```
 
-Java core does not come with a testing suite but many 3rd party testing options are available to us. One of these third party testing suites is JUnit. JUnit is very popular for testing jave and it will be what we use here. 
+Java core does not come with a testing suite but many 3rd party testing options are available to us. One of these third party testing suites is JUnit. JUnit is very popular for testing Java and it will be what we use here. 
 
-The pom.xml file is a way for a developer to define configuration options for a Java application. It also makes it easy to import and  manage libraries and frameworks that are needed in the project
+The pom.xml file is a way for a developer to define configuration options for a Java application. It also makes it easy to import and  manage libraries and frameworks that are needed in the project.
 
 To confirm that the JUnit testing suite was imported, you can look in the 'external libraries' folder inside the project and find the JUnint libraries listed.
 
@@ -116,7 +116,7 @@ git merge feature-test-config
 git status
 ```
 
-At this point is up to you what you want to do with the feature-test-config branch. It can be deleted or you can keep it around. I am choosing to delete it. Also this is a good place to push your changes up to Github
+At this point is up to you what you want to do with the feature-test-config branch. It can be deleted or you can keep it around. I am choosing to delete it. Also this is a good place to push your changes up to Github.
 
 ```
 git branch -d feature-test-config  // delete branch
@@ -128,7 +128,7 @@ git push  // push changes to github
 
 ## Part 3 - Classes
 
-Now it's time to thing about the Objects that will be apart of our inventory application. We will definately need a product to inventory. Come up with 2 products for your store, and thing about how you would represent them as java objects.
+Now it's time to thing about the Objects that will be apart of our inventory application. We will definately need a product to inventory. Come up with 2 products for your store, and thing about how you would represent them as Java objects.
 
 As an example I will be using a store that sells Sneakers and Whiskey. So, I know I will definately have a Sneaker class and a Whiskey class. We will see later on that we will create a few more classes to help manage our inventory.
 
@@ -203,7 +203,7 @@ Because our store is so successful, we are really moving through inventory. So I
 
 Because we are Doing Test Driven Development (TDD) we need to also have test classes for the models and the services.
 
-For my example store I will have the follwing test classes
+For my example store I will have the follwing test classes.
 
 ```
 src
@@ -240,4 +240,4 @@ git branch -d feature-create-classes
 
 In this section we used git inside the terminal to connect with guthub to handle our version control. We used the pom.xml file to import JUnit so that we can test our code as we develop. Using packages to organize our code, we created some classes to represent products in the application.
 
-Now it is time to add some functionality to the classes.
+Now it is time to add some functionality to the classes, we will do this in the next section
