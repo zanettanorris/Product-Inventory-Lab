@@ -171,7 +171,7 @@ Now complete the constructors for the rest of your models.
 
 ## Part 4 - Managing the Data with a Service
 
-At this point we have so really good objects with some fantastic test. Now we need to think about how we would manage these objects. 
+At this point we have some really good objects with some fantastic test. Now we need to think about how we would manage these objects. 
 
 If I wanted to create a few objects it would look a little like this:
 
@@ -181,7 +181,7 @@ Sneaker s2 = new Sneaker(arg1, ag2, arg3...);
 Sneaker s3 = new Sneaker(arg1, ag2, arg3...);
 ```
 
-But the store is doing so well we will need to keep track of hundreds maybe thousands of sneaker. I could use an ArrayList to hold all of the sneakers I make.
+But the store is doing so well we will need to keep track of hundreds maybe thousands of sneakers. I could use an ArrayList to hold all of the sneakers I make.
 
 ```
 List<Sneaker> sneakerList = new ArrayList<Sneaker>();
@@ -205,19 +205,19 @@ sneakerList.add(new Sneaker(arg1, ag2, arg3...));
 sneakerList.add(new Sneaker(arg1, ag2, arg3...));
 ```
 
-This looks good, but we can take this a little further. The problem here is that if someone forgets to add a sneaker to the array it will not be managed and possible forgotten :( This will not be good, especially if we start doing batch processing on items in the array. If an item wasn't added then I will not be apart of the batch.
+This looks good, but we can take this a little further. The problem here is that if someone forgets to add a sneaker to the array it will not be managed and possible forgotten :( This will not be good, especially if we start doing batch processing on items in the array. If an item wasn't added then it will not be apart of the batch.
 
-Another problem is when we look to manipulate the collection of objects. Task such as finding objects and removing objects may need a few lines of code to accomplish. This can start to add up if we are creating, reading, updating and deleting objects alot from the array.
+Another problem is when we look to manipulate the collection of objects. Task such as finding objects and removing objects may need a few lines of code to accomplish. This can start to add up if we are creating, reading, updating and deleting objects from the array.
 
 A solution these problems is to abstract away these processes into a class that will manage the objects. A class that will proved the service of maintaining these objects.
 
-This is where Service class comes handy. It will have methods for creating, finding and deleting objects from the list.
+This is where Service classes comes handy. It will have methods for creating, finding and deleting objects from the list.
 
 As always start with a new branch
 
 **main/java/services/SneakerService.java**
 
-```
+```java
 public class SneakerService {
 
     private static int nextId = 1;  // (1)
@@ -226,8 +226,8 @@ public class SneakerService {
 }
 ``` 
 
-1. This is a static member that I will use to create id numbers for new objects. We will see more of this later
-2. This is the collection that will hold all of the objects
+1. This is a static member that I will use to create id numbers for new objects. We will see more of this later.
+2. This is the collection that will hold all of the objects.
 
 As stated earlier, we are going to lean on this class to create, read, update, and delete. Lets go to the service test class and start with the sneaker creation behaviour.
 
@@ -238,7 +238,7 @@ public class SneakerServiceTest {
     @Test
     public void createTest(){
 
-		  // (1)
+        // (1)
         String expectedName = "Stan Smith";
         String expectedBrand = "Adidas";
         String expectedSport = "Tennis";
@@ -251,7 +251,7 @@ public class SneakerServiceTest {
         Sneaker testSneaker = SneakerService.create(expectedName, expectedBrand,
          expectedSport, expectedSize, expectedQty, expectedPrice);
 
-		  // (3)
+        // (3)
         int actualId = testSneaker.getId();
         String actualName = testSneaker.getName();
         String actualBrand = testSneaker.getBrand();
@@ -260,7 +260,7 @@ public class SneakerServiceTest {
         int actualQty = testSneaker.getQuantity
         float actualPrice = testSneaker.getPrice();
 
-		 // (4)
+        // (4)
         Assertions.assertEquals(Integer.class.getName(), new Integer(actualId).getClass().getName());
         Assertions.assertEquals(expectedName, actualName);
         Assertions.assertEquals(expectedBrand, actualBrand);
@@ -273,16 +273,16 @@ public class SneakerServiceTest {
 }
 ```
 
-1. We create some test data that we will use to create a test Sneaker
-2. First I instantiate a SneakerService object. Then I will use ```create(arg1, arg2, arg3...)``` to have the servce create and return a new sneaker object.
+1. We create some test data that we will use to create a test Sneaker.
+2. First I instantiate a SneakerService object. Then I will use ```create(arg1, arg2, arg3...)``` to have the service create and return a new sneaker object.
 3. Using accessor methods to capture the data from the newly created sneaker.
-4. Check/Assert that the data passed into the SneakerService was properly assigned to the new sneaker object returned
+4. Check/Assert that the data passed into the SneakerService was properly assigned to the new sneaker object returned.
 
 Now it's time to implement the create sneaker logic:
 
 **/main/java/services/SneakerService.java**
 
-```
+```java
 // (1)
 public Sneaker create(String name, String brand, String sport, int size, int quantity, float price) {
     
@@ -297,21 +297,21 @@ public Sneaker create(String name, String brand, String sport, int size, int qua
 }
 ```
 
-1. A create method that will accept aurgements and return a new Sneaker instance
-2. Make a new Sneaker instance and pass the values recieve from the line above into the constructor
-3. Add the new sneaker to the ArrayList to be managed
-4. Return the new object to the caller
+1. A create method that will accept arguments and return a new Sneaker instance.
+2. Make a new Sneaker instance and pass the values receive from the line above into the constructor.
+3. Add the new sneaker to the ArrayList to be managed.
+4. Return the new object to the caller.
 
-Notice the ```nextId++``` in the second line. I am using the static memeber *nextId* to assign id numbers to new objects and incrementing by 1. This will then be assigned to the next object created.
+Notice the ```nextId++``` in the second line. I am using the static member *nextId* to assign id numbers to new objects and incrementing it by 1. This will then be assigned to the next object created.
 
 Check to make sure the test passed and continue adding the following behaviours: find/findAll/delete
 
-Using my example the following would be my method signatures for these operations
+Using my example the following would be my method signatures for these operations.
 
 ```
 //read
 public Sneaker findSneaker(int id) {
-	// should take an int and return an object with that id, if exist
+	// should take an int and return an object with that id, if exists
 }
 
 //read all
@@ -325,14 +325,14 @@ public boolean delete(int id) {
     // Otherwise return false
 }
 ```
-Dont forget to write your test first, and commit along the way!
+Dont forget to write your tests first and commit along the way!
 
-Once you have completed this service, move on to the other services you will need to manage the other models
+Once you have completed this service, move on to the other services you will need to manage the other models.
 
-Now if we every need to change the way we create, read, update, delete these objects we can do it here in this service object. It will then be reflected everywhere the service is used to do these operations. 
+Now if we ever need to change the way we create, read, update, delete these objects we can do it here in this service object. It will then be reflected everywhere the service is used to do these operations. 
 
 
 
 ## Conclusion
 
-We continued using git to make incremental changes to our program to ensure we have a recovery route if neccissary. We added properties, getters and setters to the models and tested them as proof of implementation. Finally we created services for the models to help manage and centralize code.
+We continued using git to make incremental changes to our program to ensure we have a recovery route if necessary. We added properties, getters and setters to the models and tested them as proof of implementation. Finally we created services for the models to help manage and centralize code.
