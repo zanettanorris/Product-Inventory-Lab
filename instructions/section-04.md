@@ -160,7 +160,7 @@ private void loadData(){
 ```
 
 1. Set up some values to be used later
-2. We use a try with resources block to catch any excections that can occur. If there are problems retrieving the file, the catch block with handle exception
+2. We use a *try with resources* block to create a new BufferedReader and catch any exceptions that can occur. If there are problems retrieving the file, the catch block with handle exception
 3. Begin setting the state of the service by reading in the first line. If you remember the first line represents the nextId value.
 4. For every line read in from the CSV file, the program with split the string values by a ','. Then parsed into the proper data type if neccessary.
 5. Finally create a new item using the CSV data to set the initial state and add it to the inventory
