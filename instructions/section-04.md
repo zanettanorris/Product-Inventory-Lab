@@ -67,13 +67,13 @@ package utils;
 public class CSVUtils {
     private static final char DEFAULT_SEPARATOR = ',';  // (1)
 	
-	(2)
+	// (2)
     public static void writeLine(Writer w, List<String> values) throws IOException {
         boolean first = true;
 
         StringBuilder sb = new StringBuilder();
 		
-		 (3)
+		// (3)
         for (String value : values) {
             if (!first) {
                 sb.append(DEFAULT_SEPARATOR);
@@ -131,12 +131,12 @@ Now that the application can write data to a CSV file. It would be nice to read 
 
 ```
 private void loadData(){
-	(1)
+	// (1)
 	String csvFile = "/Users/batman/Desktop/Sneaker.csv";
 	String line = "";
 	String csvSplitBy = ",";
 	
-	(2)
+	// (2)
 	try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 	    nextId = Integer.parseInt(br.readLine());  // (3)
 	
