@@ -171,4 +171,4 @@ private void loadData(){
 
 In this section we identified the need to be able to persist our data in order to have save meaningful data over time. We used a utility class to help write and save the data to a CSV file. Because Comma Seperated Values are a common data format we have the ability to use this file in a number of different ways. This file a can later be imported back into the program as we did earlier, or even used by other programs and systems if needed.
 
-This is pretty cool stuff we are embarking on. But can I get better, I think so! CSV files are great but have a few draw backs. One of these draw backs is readability, and being able to directly edit and understand larger sets of data. This is were CSV as some limitations, we are going to look an alternative that helps remedy this.
+This is pretty cool stuff we are embarking on. But can it get better? I think so! CSV files are great but have a few draw backs. One of these draw backs is readability, and being able to directly edit and understand larger sets of data. This is were CSV as some limitations, we are going to look an alternative that helps remedy this.
